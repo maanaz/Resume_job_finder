@@ -334,8 +334,6 @@ Possible future features include:
 
 ## 👨‍💻 Author
 
-**Maanaz K Antony**
-
-BTech Computer Science Engineering
+**Maanaz K Antony*
 
 Built as a practical AI/ML project using Python, CrewAI, Google Gemini, Streamlit, and the Adzuna Jobs API.
