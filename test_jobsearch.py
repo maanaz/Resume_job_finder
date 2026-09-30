@@ -15,3 +15,4 @@ for job in jobs:
     print("LOCATION:", job["location"])
     print("SALARY:", job["salary_min"], "-", job["salary_max"])
     print("APPLY:", job["url"])
+
