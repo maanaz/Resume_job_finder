@@ -1,0 +1,32 @@
+resume-job-matcher/
+│
+├── app.py
+├── requirements.txt
+├── .env
+├── .gitignore
+│
+├── backend/
+│   ├── __init__.py
+│   ├── resume_analyzer.py
+│   ├── job_search.py
+│   ├── job_matcher.py
+│   └── crew.py
+│
+├── utils/
+│   ├── __init__.py
+│   └── pdf_reader.py
+│
+├── pages/
+│   ├── dashboard.py
+│   ├── find_jobs.py
+│   ├── resume.py
+│   └── settings.py
+│
+├── data/
+│   └── .gitkeep
+│
+├── uploads/
+│   └── .gitkeep
+│
+└── .streamlit/
+    └── secrets.toml

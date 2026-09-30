@@ -1,0 +1,7 @@
+streamlit
+crewai
+litellm
+pypdf
+requests
+python-dotenv
+authlib
