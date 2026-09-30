@@ -40,9 +40,7 @@ search_button = st.button(
 ) 
  
  
-# ------------------------- 
-# Search results 
-# ------------------------- 
+
  
 if search_button: 
  
@@ -69,9 +67,7 @@ if search_button:
                 st.error(f"Something went wrong: {e}") 
  
  
-# ------------------------- 
-# Display jobs 
-# ------------------------- 
+
  
 if "jobs" in st.session_state: 
  
@@ -118,9 +114,7 @@ if "jobs" in st.session_state:
                     job["url"] 
                 ) 
 
-# -------------------------
-# Resume-based job search
-# -------------------------
+
 
 st.markdown("---")
 
@@ -177,7 +171,6 @@ if uploaded_resume:
                         resume_text
                     )
 
-                    # Store CrewAI result
                     st.session_state[
                         "resume_jobs"
                     ] = str(result)
@@ -193,9 +186,7 @@ if uploaded_resume:
                 )
 
 
-# -------------------------
-# Display resume-based jobs
-# -------------------------
+
 
 if "resume_jobs" in st.session_state:
 
