@@ -1,4 +1,5 @@
 import os
+from dotenv import load_dotenv
 
 from crewai import Agent, Crew, Task, LLM
 from crewai.tools import tool
@@ -6,14 +7,28 @@ from crewai.tools import tool
 from backend.job_search import search_jobs
 from backend.resume_analyzer import create_resume_task
 
+load_dotenv()
+
 
 def create_llm():
+    provider = os.getenv("LLM_PROVIDER", "ollama").strip().lower()
+
+    if provider == "gemini":
+        return LLM(
+            model="gemini/gemini-3.5-flash-lite",
+            api_key=os.getenv("GEMINI_API_KEY")
+        )
+
+    ollama_model = os.getenv("OLLAMA_MODEL", "qwen3:1.7b").strip()
+    ollama_base_url = os.getenv("OLLAMA_BASE_URL", "http://localhost:11434").strip()
+
+    if not ollama_model.startswith("ollama/"):
+        ollama_model = f"ollama/{ollama_model}"
 
     return LLM(
-        model="gemini/gemini-3.5-flash-lite",
-        api_key=os.getenv("GEMINI_API_KEY")
+        model=ollama_model,
+        base_url=ollama_base_url
     )
-
 
 @tool("Job Search")
 def job_search(query: str, location: str = "India") -> str:
